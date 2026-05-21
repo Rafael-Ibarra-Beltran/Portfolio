@@ -43,6 +43,15 @@ export const projects = [
     ]
   },
   {
+    title: 'Travel Journal',
+    description: {
+      es: 'Aplicación Android para registrar viajes, lugares visitados y experiencias personales con persistencia local en SQLite. Funciona sin conexión e incluye CRUD, búsqueda, filtros, ordenamiento, selección de imágenes, compartir por intent y diseños responsivos para teléfono, tableta, vertical y horizontal.',
+      en: 'Android app for recording trips, visited places, and personal experiences with local SQLite persistence. Works offline and includes CRUD, search, filters, sorting, image selection, Android share intents, and responsive layouts for phones, tablets, portrait, and landscape.'
+    },
+    stack: ['Java', 'Android Studio', 'Android SDK', 'Gradle', 'SQLite', 'AndroidX AppCompat', 'RecyclerView', 'Material Components', 'ConstraintLayout'],
+    links: [{ label: 'GitHub', href: 'https://github.com/Rafael-Ibarra-Beltran/TravelJournal' }]
+  },
+  {
     title: 'SummaryQ',
     description: {
       es: 'Plataforma de estudio para crear, gestionar, compartir y repasar flashcards organizadas en mazos. Incluye repetición espaciada, estadísticas de progreso, mazos públicos, perfiles, autenticación y tema oscuro/claro.',
