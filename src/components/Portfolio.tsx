@@ -121,6 +121,10 @@ const navItems = [
   { id: 'contact', index: 7 }
 ] as const;
 
+const primaryBtn = "inline-flex items-center justify-center gap-2 rounded-full border border-[#8BFAE5]/30 bg-[#8BFAE5]/12 px-5 py-3 text-sm font-semibold text-[#E6EDF3] shadow-[0_0_24px_rgba(139,250,229,0.10)] transition-all hover:-translate-y-0.5 hover:border-[#8BFAE5]/60 hover:bg-[#8BFAE5]/22 hover:shadow-[0_0_32px_rgba(139,250,229,0.18)]";
+const secondaryBtn = "inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-[#E6EDF3] transition-all hover:border-[#8BFAE5]/40 hover:bg-white/[0.07] hover:-translate-y-0.5";
+const ghostBtn = "inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-[#9BA7B4] transition-all hover:border-[#7AA2F7]/40 hover:text-[#E6EDF3] hover:-translate-y-0.5";
+
 const heroAscii = String.raw`┌─ profile.render
 │  RI :: backend/cloud
 │  signal: calm + precise
@@ -328,8 +332,8 @@ export default function Portfolio({ data, baseUrl }: PortfolioProps) {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070A]/88 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Primary navigation">
           <a href="#home" className="group flex items-center gap-3" onClick={() => setMenuOpen(false)}>
-            <span className="grid size-9 place-items-center rounded-lg border border-white/10 bg-[#0F141B] font-mono text-sm text-[#8BFAE5] transition-colors group-hover:border-[#8BFAE5]/40">
-              RI
+            <span className="grid size-9 place-items-center rounded-lg border border-white/10 bg-[#0F141B] transition-colors group-hover:border-[#8BFAE5]/40 overflow-hidden">
+              <img src={asset('/images/logo.png')} alt="" className="h-full w-full object-contain p-0.5" />
             </span>
             <span className="hidden text-sm font-medium tracking-wide text-[#E6EDF3] sm:block">Rafael Ibarra</span>
           </a>
@@ -401,16 +405,16 @@ export default function Portfolio({ data, baseUrl }: PortfolioProps) {
             <p className="mt-7 max-w-2xl text-base leading-7 text-[#9BA7B4] sm:text-lg sm:leading-8">{data.profile.intro[locale]}</p>
 
             <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
-              <a className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8BFAE5] px-5 py-3 text-sm font-bold text-[#05070A] shadow-[0_0_0_1px_rgba(5,7,10,0.22),0_14px_30px_rgba(139,250,229,0.12)] [text-shadow:0_1px_0_rgba(255,255,255,0.35)] transition-transform hover:-translate-y-0.5" href={data.profile.links.linkedin.href} target="_blank" rel="noreferrer">
+              <a className={primaryBtn} href={data.profile.links.linkedin.href} target="_blank" rel="noreferrer">
                 <ArrowUpRight size={17} /> {t.ctas.linkedin}
               </a>
-              <a className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-[#E6EDF3] transition-colors hover:border-[#8BFAE5]/40" href={data.profile.links.github.href} target="_blank" rel="noreferrer">
+              <a className={secondaryBtn} href={data.profile.links.github.href} target="_blank" rel="noreferrer">
                 <Code2 size={17} /> {t.ctas.github}
               </a>
-              <a className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-[#9BA7B4] transition-colors hover:border-[#7AA2F7]/40 hover:text-[#E6EDF3]" href="#projects">
+              <a className={ghostBtn} href="#projects">
                 {t.ctas.projects} <ArrowUpRight size={17} />
               </a>
-              <a className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-[#9BA7B4] transition-colors hover:border-[#7AA2F7]/40 hover:text-[#E6EDF3]" href="#contact">
+              <a className={ghostBtn} href="#contact">
                 {t.ctas.contact}
               </a>
             </div>
@@ -593,8 +597,8 @@ export default function Portfolio({ data, baseUrl }: PortfolioProps) {
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#9BA7B4]">{data.profile.availability[locale]}</p>
             <p className="mt-3 max-w-2xl leading-7 text-[#9BA7B4]">{t.contactIntro}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={data.profile.links.linkedin.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#8BFAE5] px-5 py-3 text-sm font-bold text-[#05070A] shadow-[0_0_0_1px_rgba(5,7,10,0.22),0_14px_30px_rgba(139,250,229,0.12)] [text-shadow:0_1px_0_rgba(255,255,255,0.35)] transition-transform hover:-translate-y-0.5"><ArrowUpRight size={17} />{t.contactPrimary}</a>
-              <a href={data.profile.links.github.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-[#E6EDF3] transition-colors hover:border-[#8BFAE5]/40"><Code2 size={17} />{t.contactSecondary}</a>
+              <a href={data.profile.links.linkedin.href} target="_blank" rel="noreferrer" className={primaryBtn}><ArrowUpRight size={17} />{t.contactPrimary}</a>
+              <a href={data.profile.links.github.href} target="_blank" rel="noreferrer" className={secondaryBtn}><Code2 size={17} />{t.contactSecondary}</a>
             </div>
           </div>
         </section>

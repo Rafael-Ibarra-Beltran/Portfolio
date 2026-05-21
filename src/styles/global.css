@@ -29,6 +29,10 @@ body {
   background:
     radial-gradient(circle at 20% 0%, rgba(122, 162, 247, 0.12), transparent 34rem),
     radial-gradient(circle at 80% 10%, rgba(139, 250, 229, 0.08), transparent 30rem),
+    radial-gradient(circle at 30% 50%, rgba(122, 162, 247, 0.06), transparent 40rem),
+    radial-gradient(circle at 70% 45%, rgba(139, 250, 229, 0.05), transparent 36rem),
+    radial-gradient(circle at 15% 85%, rgba(122, 162, 247, 0.05), transparent 32rem),
+    radial-gradient(circle at 85% 80%, rgba(139, 250, 229, 0.04), transparent 28rem),
     linear-gradient(180deg, var(--bg-primary), var(--bg-secondary) 42%, var(--bg-primary));
   color: var(--text-primary);
   font-family:
